@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPITALBET TICKET SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="full-screen-container">
+        <!-- Header spans full width -->
+        <header class="top-header">
+            <h1>CAPITALBET <span class="accent">TICKET SYSTEM</span></h1>
+            <p>🎫 New Ticket Submission</p>
+        </header>
+
+        <!-- Form area that takes remaining height -->
+        <div class="form-area">
+            <div class="form-scroll">
+                <form id="ticket-form" method="post" autocomplete="off">
+                    <div class="form-grid">
+
+                        <!-- Department -->
+                        <div class="form-group">
+                            <label>🏛️ Department</label>
+                            <select name="Department" id="department-select" required>
+                                <option value="">Select Department</option>
+                                <option value="OP">Operations (OP-)</option>
+                                <option value="IT">IT (IT-)</option>
+                                <option value="HR">HR (HR-)</option>
+                                <option value="EXP">Expense (EXP-)</option>
+                                <option value="MRKT">Marketing (MRKT-)</option>
+                                <option value="FINANCE">Finance (FINANCE-)</option>
+                            </select>
+                        </div>
+
+                        <!-- Branch -->
+                        <div class="form-group">
+                            <label>🏢 Branch</label>
+                            <select class="branch-select" name="Branch" required>
+                                <option value="BUDADIRI">BUDADIRI</option>
+                                <option value="BUGIRI">BUGIRI</option>
+                                <option value="BUGWERE">BUGWERE</option>
+                                <option value="BUKUNGU">BUKUNGU</option>
+                                <option value="BUKUYA">BUKUYA</option>
+                                <option value="BUSIA MAIN">BUSIA MAIN</option>
+                                <option value="BUSIA PARK">BUSIA PARK</option>
+                                <option value="BUSIA 3">BUSIA 3</option>
+                                <option value="BWEYOGERERE">BWEYOGERERE</option>
+                                <option value="HBT COMPLEX">HBT COMPLEX</option>
+                                <option value="HOLLYWOOD">HOLLYWOOD</option>
+                                <option value="IDUDI">IDUDI</option>
+                                <option value="IGANGA 4">IGANGA 4</option>
+                                <option value="IGANGA MAIN">IGANGA MAIN</option>
+                                <option value="IGANGA 3">IGANGA 3</option>
+                                <option value="IGANGA 2">IGANGA 2</option>
+                                <option value="KABALE MAIN">KABALE MAIN</option>
+                                <option value="KABALE 2">KABALE 2</option>
+                                <option value="KAKOOBA">KAKOOBA</option>
+                                <option value="KALAGI">KALAGI</option>
+                                <option value="KALERWE">KALERWE</option>
+                                <option value="KASENGE">KASENGE</option>
+                                <option value="KASSANDA">KASSANDA</option>
+                                <option value="KASUBI">KASUBI</option>
+                                <option value="KATWE">KATWE</option>
+                                <option value="KIBIRI">KIBIRI</option>
+                                <option value="KINAWA CB">KINAWA CB</option>
+                                <option value="KIREKA">KIREKA</option>
+                                <option value="KIREKA BIIRA">KIREKA BIIRA</option>
+                                <option value="KIREKU">KIREKU</option>
+                                <option value="KIZUNGU MBARARA">KIZUNGU MBARARA</option>
+                                <option value="KKUNGU">KKUNGU</option>
+                                <option value="KOLO">KOLO</option>
+                                <option value="KOSOVO">KOSOVO</option>
+                                <option value="KULEKANA">KULEKANA</option>
+                                <option value="MAFUBIRA">MAFUBIRA</option>
+                                <option value="MBALE KUMI ROAD">MBALE KUMI ROAD</option>
+                                <option value="MBALE MAIN">MBALE MAIN</option>
+                                <option value="MBARARA MAIN">MBARARA MAIN</option>
+                                <option value="MBARARA RUTI">MBARARA RUTI</option>
+                                <option value="MOONI BRANCH">MOONI BRANCH</option>
+                                <option value="MUKONO">MUKONO</option>
+                                <option value="MUTUNGO">MUTUNGO</option>
+                                <option value="NAKIFUMA">NAKIFUMA</option>
+                                <option value="NAMATABA">NAMATABA</option>
+                                <option value="NAMINYA">NAMINYA</option>
+                                <option value="NAMUYENJE">NAMUYENJE</option>
+                                <option value="NANTABULILIRWA">NANTABULILIRWA</option>
+                                <option value="NASUUTI CB">NASUUTI CB</option>
+                                <option value="NATEETE CB">NATEETE CB</option>
+                                <option value="OVINO">OVINO</option>
+                                <option value="RWAHI">RWAHI</option>
+                                <option value="SEKAZIGA">SEKAZIGA</option>
+                                <option value="TIRRA">TIRRA</option>
+                                <option value="USAFI">USAFI</option>
+                                <option value="WAKULUKUKU">WAKULUKUKU</option>
+                                <option value="WANTONI">WANTONI</option>
+                            </select>
+                            <div class="branch-controls">
+                                <button type="button" class="branch-btn" id="add-branch">Add Branch</button>
+                                <button type="button" class="branch-btn" id="delete-branch">Delete Branch</button>
+                            </div>
+                        </div>
+
+                        <!-- Branch Employee Name -->
+                        <div class="form-group">
+                            <label>👤 Branch Employee Name</label>
+                            <input type="text" name="Branch_Employee_Name" required />
+                        </div>
+
+                        <!-- Position -->
+                        <div class="form-group">
+                            <label>💼 Position</label>
+                            <select name="Position" required>
+                                <option value="Manager">Manager</option>
+                                <option value="Teller">Teller</option>
+                                <option value="Supervisor">Supervisor</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Reason for Ticket -->
+                        <div class="form-group">
+                            <label>❓ Reason for Ticket</label>
+                            <input type="text" name="Reason_for_Ticket" required />
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="form-group">
+                            <label>📊 Quantity</label>
+                            <input type="number" name="Qty" required />
+                        </div>
+
+                        <!-- Problem Explanation -->
+                        <div class="form-group span-2">
+                            <label>⚠️ Problem Explanation</label>
+                            <textarea name="Problem_Explanation" required></textarea>
+                        </div>
+
+                        <!-- Responsible Person -->
+                        <div class="form-group">
+                            <label>👨‍💼 Responsible Person</label>
+                            <input type="text" name="Responsible_Person" required placeholder="Enter name" />
+                        </div>
+
+                        <!-- Ticket Status -->
+                        <div class="form-group">
+                            <label>📌 Ticket Status</label>
+                            <select name="Ticket_Status" required>
+                                <option value="Pending" selected>🔴 Pending</option>
+                                <option value="Closed">🟡 Closed</option>
+                            </select>
+                        </div>
+
+                        <!-- Created By Who -->
+                        <div class="form-group">
+                            <label>✍️ Created By Who</label>
+                            <input type="text" name="Created_By_Who" required placeholder="Your name" />
+                        </div>
+
+                        <!-- Closing Date -->
+                        <div class="form-group">
+                            <label>📅 Closing Date</label>
+                            <input type="date" name="Closing_Date" />
+                        </div>
+
+                        <!-- Details -->
+                        <div class="form-group span-2">
+                            <label>📝 Details</label>
+                            <textarea name="Details"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Submit button fixed at bottom -->
+            <div class="submit-bar">
+                <button type="submit" class="submit-btn" id="submit-btn" form="ticket-form">Submit Ticket 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

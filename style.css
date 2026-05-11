@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #000;
+    overflow: hidden;
+}
+
+.full-screen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+}
+
+/* Header: now RED instead of black */
+.top-header {
+    background: #B71C1C;        /* dark red */
+    color: #FFC107;             /* yellow text */
+    padding: 16px 30px;
+    text-align: center;
+    border-bottom: 3px solid #FFC107;   /* yellow border for contrast */
+    flex-shrink: 0;
+}
+
+.top-header h1 {
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;                /* white text for better readability */
+}
+
+.top-header .accent {
+    color: #FFC107;             /* yellow accent */
+    background: #000;           /* black background for the "TICKET SYSTEM" badge */
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.top-header p {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 4px;
+    color: #FFC107;
+}
+
+/* Main form area */
+.form-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px 40px;
+}
+
+.form-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.span-2 {
+    grid-column: span 2;
+}
+
+label {
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+input, select, textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #D32F2F;
+    box-shadow: 0 0 0 2px rgba(211,47,47,0.2);
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* Branch controls */
+.branch-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.branch-btn {
+    padding: 8px 14px;
+    background: #FFC107;
+    border: 1px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    color: #000;
+    flex: 1;
+    transition: background 0.2s;
+}
+
+.branch-btn:hover {
+    background: #FFB300;
+}
+
+/* Submit bar */
+.submit-bar {
+    padding: 16px 0 0;
+    border-top: 2px solid #D32F2F;
+    margin-top: 10px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Submit button: RED instead of black */
+.submit-btn {
+    padding: 15px 40px;
+    background: #B71C1C;        /* dark red */
+    color: #FFC107;             /* yellow text */
+    border: 2px solid #FFC107;
+    border-radius: 30px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background: #7F0000;        /* even darker red on hover */
+    color: #fff;
+    border-color: #000;
+    box-shadow: 0 4px 15px rgba(183,28,28,0.5);
+}
+
+.submit-btn:disabled {
+    background: #888;
+    color: #eee;
+    border-color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Select2 custom */
+.select2-container--default .select2-selection--single {
+    height: 46px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 46px;
+    padding-left: 14px;
+    font-weight: 600;
+    color: #000;
+    font-size: 15px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 44px;
+}
+
+.select2-container--default .select2-results__option {
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Scrollbar */
+.form-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form-scroll::-webkit-scrollbar-thumb {
+    background: #D32F2F;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .full-screen-container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .form-area {
+        padding: 15px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.span-2 {
+        grid-column: span 1;
+    }
+
+    .top-header h1 {
+        font-size: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
